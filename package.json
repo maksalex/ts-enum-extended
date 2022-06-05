@@ -1,0 +1,65 @@
+{
+  "name": "ts-enum-extended",
+  "version": "1.0.0",
+  "description": "Enums for TS|JS",
+  "main": "dist/ts-enum.umd.js",
+  "module": "dist/ts-enum.esm.js",
+  "unpkg": "dist/ts-enum.min.js",
+  "scripts": {
+    "build": "yarn build:browser && yarn build:es && yarn build:umd",
+    "build:browser": "rollup --config build/rollup.config.browser.js",
+    "build:es": "rollup --config build/rollup.config.es.js",
+    "build:umd": "rollup --config build/rollup.config.umd.js",
+    "prepublishOnly": "yarn test && yarn build",
+    "test": "yarn build && yarn test:eslint && yarn run test:unit",
+    "test:eslint": "eslint --ext .ts",
+    "test:unit": "yarn run jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@types/jest": "^28.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^28.1.0",
+    "rollup": "^2.75.5",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "~0.31.1",
+    "rollup-plugin-uglify": "^6.0.4",
+    "ts-jest": "^28.0.4",
+    "typescript": "^4.6.2",
+    "uglify-es": "^3.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maksalex/ts-enum.git"
+  },
+  "keywords": [
+    "ts",
+    "js",
+    "enum"
+  ],
+  "author": "maksalex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maksalex/ts-enum/issues"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|js)x?$": "ts-jest"
+    },
+    "testRegex": "(tests/.*\\.(test|spec))\\.(js?|ts?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "node"
+    ]
+  },
+  "homepage": "https://github.com/maksalex/ts-enum#readme"
+}
